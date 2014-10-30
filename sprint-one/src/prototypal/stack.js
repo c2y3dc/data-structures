@@ -15,6 +15,13 @@ stackMethods.push = function(value){
   this.counter++;
 };
 
+stackMethods.pop = function(){
+  var localStorage = this.storage[this.counter-1];
+  delete this.storage[this.counter-1];
+  if (this.counter > 0){this.counter--;};
+  return localStorage;
+};
+
 stackMethods.size = function(){
   return this.counter;
 };
