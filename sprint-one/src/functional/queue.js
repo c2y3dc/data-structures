@@ -2,27 +2,26 @@ var makeQueue = function(){
   var someInstance = {};
   var counter = 0;
   var lowest = 0;
+  var highest = 0;
   // Use an object with numeric keys to store values
   var storage = {};
 
   // Implement the methods below
 
   someInstance.enqueue = function(value){
+    storage[highest] = value;
     counter++;
-    storage[counter] = value;
+    highest++;
   };
 
   someInstance.dequeue = function(){
-
-    debugger;
-    var output = storage[lowest];
-
-    delete storage[lowest];
-
-    lowest++;
-    counter = counter - lowest;
-    if(counter < 0){return counter = 0;}
-    return output;
+    if(counter > 0){
+      counter--;
+      var output = storage[lowest];
+      delete storage[lowest];
+      lowest++;
+      return output;
+    }
   };
 
   someInstance.size = function(){
