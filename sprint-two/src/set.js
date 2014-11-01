@@ -7,22 +7,19 @@ var makeSet = function(){
 var setPrototype = {};
 
 setPrototype.add = function(item){
-  //if(typeof item === 'String'){
     this._storage.push(item);
     console.log(this._storage);
-  //}
 };
 
 setPrototype.contains = function(item){
+  //debugger;
+  var result = false;
   for(var i = 0; i < this._storage.length; i++){
-
     if(this._storage[i] === item){
-      //console.log(this._storage[i], item, i);
-      return true;
-    }else{
-      return false;
+      result = true;
     }
   }
+  return result;
 };
 
 setPrototype.remove = function(item){
