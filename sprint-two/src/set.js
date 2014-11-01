@@ -8,11 +8,9 @@ var setPrototype = {};
 
 setPrototype.add = function(item){
     this._storage.push(item);
-    console.log(this._storage);
 };
 
 setPrototype.contains = function(item){
-  //debugger;
   var result = false;
   for(var i = 0; i < this._storage.length; i++){
     if(this._storage[i] === item){

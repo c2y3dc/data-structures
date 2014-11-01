@@ -27,7 +27,6 @@ var makeLinkedList = function(){
   list.contains = function(target){
 
     while(list.head){
-
       if(target === list.tail.value || target === list.head.value){
         return true;
       }
